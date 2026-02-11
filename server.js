@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 
 const express = require('express');
 const mysql = require('mysql2');
@@ -45,8 +45,8 @@ db.connect((err) => {
 
 // --- GOOGLE STRATEGY SETUP ---
 passport.use(new GoogleStrategy({
-    clientID: "276097152949-v1ne6qbro1u4flcjggj08s1jf0jvdlsj.apps.googleusercontent.com",
-    clientSecret: "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",
+    clientID: "process.env.GOOGLE_CLIENT_ID",
+    clientSecret: "process.env.GOOGLE_CLIENT_SECRET",
     callbackURL: "http://localhost:5000/auth/google/callback"
   },
   (accessToken, refreshToken, profile, done) => {
