@@ -1,0 +1,182 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OhhIdeaX | Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-indigo-50 min-h-screen p-4 md:p-8">
+
+    <div class="max-w-5xl mx-auto bg-white rounded-[2.5rem] shadow-2xl p-8 md:p-12 border border-indigo-100">
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
+            <div>
+                <h1 id="welcome-text" class="text-4xl font-black text-indigo-700 tracking-tight">Welcome,</h1>
+                <p class="text-slate-500 mt-2 text-lg">Your OhhIdeaX account is all set up.</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="text-right hidden md:block">
+                    <p id="user-name" class="font-bold text-slate-800">User</p>
+                    <p class="text-xs text-indigo-500 font-bold uppercase tracking-widest">Pro Member</p>
+                </div>
+                <div id="user-initials" class="w-14 h-14 bg-indigo-600 rounded-2xl flex items-center justify-center text-white font-black text-xl shadow-lg shadow-indigo-200">
+                    ??
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                    <i data-lucide="check-circle" class="text-green-600 w-6 h-6"></i>
+                </div>
+                <h3 class="text-xs font-black uppercase text-slate-400 tracking-widest">Account Status</h3>
+                <p class="text-2xl font-black text-slate-800 mt-1">Active & Verified</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                    <i data-lucide="database" class="text-blue-600 w-6 h-6"></i>
+                </div>
+                <h3 class="text-xs font-black uppercase text-slate-400 tracking-widest">Storage Used</h3>
+                <p class="text-2xl font-black text-slate-800 mt-1">0.4 GB / 10 GB</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                <div class="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                    <i data-lucide="shield" class="text-purple-600 w-6 h-6"></i>
+                </div>
+                <h3 class="text-xs font-black uppercase text-slate-400 tracking-widest">Security</h3>
+                <p class="text-2xl font-black text-slate-800 mt-1">High Protection</p>
+            </div>
+        </div>
+        <button onclick="logoutUser()" class="mt-12 flex items-center gap-3 text-red-500 font-bold hover:bg-red-50 px-6 py-3 rounded-2xl transition-all">
+            <i data-lucide="log-out" class="w-5 h-5"></i> 
+            <span>Logout Account</span>
+        </button>
+    </div>
+
+    <script>
+        // Icons initialize karna
+        lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Memory se naya naam lena
+            const savedName = localStorage.getItem('userName');
+            
+            if (savedName) {
+                // Title update
+                document.getElementById('welcome-text').innerText = `Welcome, ${savedName}!`;
+                // Sub-name update
+                document.getElementById('user-name').innerText = savedName;
+                
+                // Initials generate karna (Example: Rahul Kumar -> RK)
+                const initials = savedName.split(' ').map(n => n[0]).join('').toUpperCase();
+                document.getElementById('user-initials').innerText = initials;
+            }
+        });
+
+        function logoutUser() {
+            localStorage.clear(); // Purana data saaf karna
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OhhIdeaX | Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-indigo-50 min-h-screen p-4 md:p-8">
+
+    <div class="max-w-5xl mx-auto bg-white rounded-[2.5rem] shadow-2xl p-8 md:p-12 border border-indigo-100">
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
+            <div>
+                <h1 id="welcome-text" class="text-4xl font-black text-indigo-700 tracking-tight">Welcome,</h1>
+                <p class="text-slate-500 mt-2 text-lg">Your OhhIdeaX account is all set up.</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="text-right hidden md:block">
+                    <p id="user-name" class="font-bold text-slate-800">User</p>
+                    <p class="text-xs text-indigo-500 font-bold uppercase tracking-widest">Pro Member</p>
+                </div>
+                <div id="user-profile-container" class="w-14 h-14 bg-indigo-600 rounded-2xl flex items-center justify-center text-white font-black text-xl shadow-lg shadow-indigo-200 overflow-hidden">
+                    <span id="user-initials">??</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                    <i data-lucide="check-circle" class="text-green-600 w-6 h-6"></i>
+                </div>
+                <h3 class="text-xs font-black uppercase text-slate-400 tracking-widest">Account Status</h3>
+                <p class="text-2xl font-black text-slate-800 mt-1">Active & Verified</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                    <i data-lucide="database" class="text-blue-600 w-6 h-6"></i>
+                </div>
+                <h3 class="text-xs font-black uppercase text-slate-400 tracking-widest">Storage Used</h3>
+                <p class="text-2xl font-black text-slate-800 mt-1">0.4 GB / 10 GB</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                <div class="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                    <i data-lucide="shield" class="text-purple-600 w-6 h-6"></i>
+                </div>
+                <h3 class="text-xs font-black uppercase text-slate-400 tracking-widest">Security</h3>
+                <p class="text-2xl font-black text-slate-800 mt-1">High Protection</p>
+            </div>
+        </div>
+        <button onclick="logoutUser()" class="mt-12 flex items-center gap-3 text-red-500 font-bold hover:bg-red-50 px-6 py-3 rounded-2xl transition-all">
+            <i data-lucide="log-out" class="w-5 h-5"></i> 
+            <span>Logout Account</span>
+        </button>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Backend se Google User ka data mangwana
+            fetch('/user-data')
+                .then(res => res.json())
+                .then(data => {
+                    if (data.name) {
+                        // Naam update karna
+                        document.getElementById('welcome-text').innerText = `Welcome, ${data.name.split(' ')[0]}!`;
+                        document.getElementById('user-name').innerText = data.name;
+
+                        // Photo ya Initials lagana
+                        if (data.photo) {
+                            document.getElementById('user-profile-container').innerHTML = `<img src="${data.photo}" class="w-full h-full object-cover">`;
+                        } else {
+                            const initials = data.name.split(' ').map(n => n[0]).join('').toUpperCase();
+                            document.getElementById('user-initials').innerText = initials;
+                        }
+                    } else {
+                        // Agar login nahi hai toh wapas index par bhej do
+                        window.location.href = 'index.html';
+                    }
+                })
+                .catch(err => console.error("Error fetching user data:", err));
+        });
+
+        function logoutUser() {
+            // Local storage saaf karna aur backend session khatam karna
+            localStorage.clear();
+            window.location.href = '/logout'; // Is route ko server.js mein banana hoga
+        }
+    </script>
+</body>
+</html>

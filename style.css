@@ -1,0 +1,18 @@
+/* Custom Background Gradient */
+.bg-custom-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #139c5e 100%);
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Smooth Transitions for Inputs */
+input:focus {
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
